@@ -1,0 +1,183 @@
+/**
+ * Dark Mode Toggle Block - Styles
+ *
+ * @package flavor
+ */
+
+.flavor-dark-mode-toggle {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.flavor-dark-mode-toggle .flavor-toggle-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	color: var(--wp--preset--color--muted, #6B7280);
+	gap: 8px;
+	transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.flavor-dark-mode-toggle .flavor-toggle-btn:focus {
+	outline: none;
+	box-shadow: 0 0 0 2px var(--wp--preset--color--primary, #64748B);
+	border-radius: 4px;
+}
+
+/* ========== SIMPLE STYLE ========== */
+/* Clean icon-only appearance, inspired by GitHub, Twitter, and Notion. */
+.flavor-dark-mode-toggle.is-style-simple .flavor-toggle-btn {
+	padding: 4px;
+	border-radius: 4px;
+}
+
+.flavor-dark-mode-toggle.is-style-simple .flavor-toggle-btn:hover {
+	color: var(--wp--preset--color--contrast, #111827);
+	opacity: 0.8;
+}
+
+.flavor-dark-mode-toggle.is-style-simple .flavor-toggle-btn:active {
+	opacity: 0.6;
+	transform: scale(0.95);
+}
+
+/* ========== DEFAULT STYLE (Bordered) ========== */
+.flavor-dark-mode-toggle.is-style-default .flavor-toggle-btn {
+	width: 36px;
+	height: 36px;
+	border: 1px solid var(--wp--preset--color--subtle, #E5E7EB);
+	border-radius: 8px;
+	background: var(--wp--preset--color--surface, #FAFAF9);
+	transition: all 0.2s ease;
+}
+
+.flavor-dark-mode-toggle.is-style-default .flavor-toggle-btn:hover {
+	background-color: var(--wp--preset--color--subtle, #E5E7EB);
+	border-color: var(--wp--preset--color--muted, #9CA3AF);
+	color: var(--wp--preset--color--contrast, #111827);
+}
+
+.flavor-dark-mode-toggle.is-style-default .flavor-toggle-btn:active {
+	transform: scale(0.95);
+}
+
+/* ========== MINIMAL STYLE (Hover Background) ========== */
+.flavor-dark-mode-toggle.is-style-minimal .flavor-toggle-btn {
+	padding: 8px;
+	border-radius: 8px;
+	transition: all 0.2s ease;
+}
+
+.flavor-dark-mode-toggle.is-style-minimal .flavor-toggle-btn:hover {
+	background-color: var(--wp--preset--color--subtle, #E5E7EB);
+	color: var(--wp--preset--color--contrast, #111827);
+}
+
+.flavor-dark-mode-toggle.is-style-minimal .flavor-toggle-btn:active {
+	transform: scale(0.95);
+}
+
+/* ========== PILL STYLE (Rounded Background) ========== */
+.flavor-dark-mode-toggle.is-style-pill .flavor-toggle-btn {
+	padding: 8px 12px;
+	border-radius: 999px;
+	background: var(--wp--preset--color--subtle, #E5E7EB);
+	transition: all 0.2s ease;
+}
+
+.flavor-dark-mode-toggle.is-style-pill .flavor-toggle-btn:hover {
+	background-color: var(--wp--preset--color--muted, #9CA3AF);
+	color: var(--wp--preset--color--base, #FFFFFF);
+}
+
+.flavor-dark-mode-toggle.is-style-pill .flavor-toggle-btn:active {
+	transform: scale(0.95);
+}
+
+/* ========== ICON VISIBILITY ========== */
+.flavor-dark-mode-toggle .flavor-icon-sun {
+	display: none;
+}
+
+.flavor-dark-mode-toggle .flavor-icon-moon {
+	display: block;
+}
+
+[data-theme="dark"] .flavor-dark-mode-toggle .flavor-icon-sun {
+	display: block;
+}
+
+[data-theme="dark"] .flavor-dark-mode-toggle .flavor-icon-moon {
+	display: none;
+}
+
+/* Supports users' system preference for dark mode. */
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme="light"]) .flavor-dark-mode-toggle .flavor-icon-sun {
+		display: block;
+	}
+	
+	:root:not([data-theme="light"]) .flavor-dark-mode-toggle .flavor-icon-moon {
+		display: none;
+	}
+}
+
+/* ========== DARK MODE ADJUSTMENTS ========== */
+[data-theme="dark"] .flavor-dark-mode-toggle.is-style-default .flavor-toggle-btn {
+	background: var(--wp--preset--color--surface, #1E293B);
+	border-color: var(--wp--preset--color--subtle, #334155);
+}
+
+[data-theme="dark"] .flavor-dark-mode-toggle.is-style-default .flavor-toggle-btn:hover {
+	background-color: var(--wp--preset--color--subtle, #334155);
+	border-color: var(--wp--preset--color--muted, #64748B);
+}
+
+[data-theme="dark"] .flavor-dark-mode-toggle.is-style-minimal .flavor-toggle-btn:hover {
+	background-color: var(--wp--preset--color--subtle, #334155);
+}
+
+[data-theme="dark"] .flavor-dark-mode-toggle.is-style-pill .flavor-toggle-btn {
+	background: var(--wp--preset--color--subtle, #334155);
+}
+
+[data-theme="dark"] .flavor-dark-mode-toggle.is-style-pill .flavor-toggle-btn:hover {
+	background-color: var(--wp--preset--color--muted, #64748B);
+}
+
+/* ========== LABEL ========== */
+.flavor-dark-mode-toggle .flavor-toggle-label {
+	font-size: 0.875rem;
+	font-weight: 500;
+}
+
+/* ========== ICON TRANSITION ========== */
+.flavor-dark-mode-toggle .flavor-icon-sun,
+.flavor-dark-mode-toggle .flavor-icon-moon {
+	transition: transform 0.3s ease, opacity 0.2s ease;
+}
+
+/* Smooth rotation animation when switching themes. */
+[data-theme="dark"] .flavor-dark-mode-toggle .flavor-icon-sun {
+	animation: flavor-icon-rotate 0.3s ease;
+}
+
+:root:not([data-theme="dark"]) .flavor-dark-mode-toggle .flavor-icon-moon {
+	animation: flavor-icon-rotate 0.3s ease;
+}
+
+@keyframes flavor-icon-rotate {
+	from {
+		transform: rotate(-90deg);
+		opacity: 0;
+	}
+	to {
+		transform: rotate(0deg);
+		opacity: 1;
+	}
+}

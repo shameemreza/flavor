@@ -1,0 +1,402 @@
+/**
+ * Flavor Theme - Custom Styles
+ * Minimal CSS for optimal performance
+ *
+ * @package flavor
+ * @since 1.0.0
+ */
+
+/* ========== IMAGE STYLES ========== */
+.wp-block-image.is-style-circle-mask img {
+  border-radius: 50%;
+}
+
+.wp-block-image.is-style-rounded img {
+  border-radius: 12px;
+}
+
+/* ========== SOCIAL ICONS ========== */
+.wp-block-social-links .wp-social-link {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.wp-block-social-links .wp-social-link:hover {
+  transform: translateY(-2px);
+  opacity: 0.8;
+}
+
+/* Social icons accent color on hover. */
+.wp-block-social-links.is-style-logos-only .wp-social-link:hover {
+  color: var(--wp--preset--color--accent);
+}
+
+.wp-block-social-links.is-style-logos-only .wp-social-link svg {
+  transition: fill 0.2s ease;
+}
+
+.wp-block-social-links.is-style-logos-only .wp-social-link:hover svg {
+  fill: var(--wp--preset--color--accent);
+}
+
+/* ========== TRANSITIONS ========== */
+
+.wp-block-button__link {
+  transition: all 0.2s ease;
+}
+
+.wp-block-button__link:hover {
+  transform: translateY(-1px);
+}
+
+/* Featured image hover (excludes thumbnail style) */
+.wp-block-post-featured-image:not(.flavor-thumbnail) img {
+  transition: transform 0.3s ease;
+}
+
+.wp-block-post-featured-image:not(.flavor-thumbnail) a:hover img {
+  transform: scale(1.02);
+}
+
+/* ========== POST CARDS ========== */
+
+/* Ensures consistent card heights within the grid layout. */
+.wp-block-post-template.is-layout-grid > .wp-block-group {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.flavor-post-card,
+.flavor-popular-card {
+  transition: background-color 0.2s ease;
+}
+
+.flavor-post-card:hover {
+  background-color: var(--wp--preset--color--surface);
+  border-radius: 12px;
+}
+
+.flavor-popular-card:hover {
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.1);
+  transform: translateY(-2px);
+}
+
+[data-theme="dark"] .flavor-post-card:hover {
+  background-color: var(--wp--preset--color--surface);
+}
+
+[data-theme="dark"] .flavor-popular-card:hover {
+  box-shadow: 0 4px 20px rgba(129, 140, 248, 0.15);
+}
+
+.wp-block-post-title a {
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.wp-block-post-title a:hover {
+  color: var(--wp--preset--color--accent);
+}
+
+/* Category tags link styling. */
+.wp-block-post-terms a {
+  text-decoration: none;
+  color: var(--wp--preset--color--accent);
+  transition: opacity 0.2s ease;
+}
+
+.wp-block-post-terms a:hover {
+  opacity: 0.8;
+}
+
+/* Read more link styling with accent color. */
+.wp-block-read-more {
+  text-decoration: none;
+  color: var(--wp--preset--color--accent);
+  transition: color 0.2s ease;
+}
+
+.wp-block-read-more:hover {
+  opacity: 0.8;
+}
+
+/* ========== SMASHING MAGAZINE STYLE THUMBNAIL ========== */
+
+/* Container provides extra space for the rotated thumbnail. */
+.wp-block-post-featured-image.flavor-thumbnail {
+  flex-shrink: 0 !important;
+  width: 130px !important;
+  height: 130px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Link wrapper with rotation effect, mimicking a dice standing on its corner. */
+.wp-block-post-featured-image.flavor-thumbnail a {
+  display: block !important;
+  width: 95px !important;
+  height: 95px !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  background: var(--wp--preset--color--accent) !important;
+  padding: 4px !important;
+  /* Rotated to stand on corner. */
+  transform: rotate(-12deg);
+  transform-origin: center center;
+  /* Shadow creates depth, as if sitting on a surface. */
+  box-shadow: 
+    4px 6px 12px rgba(0, 0, 0, 0.2),
+    2px 3px 6px rgba(0, 0, 0, 0.15);
+  /* Smooth transition for the hover interaction. */
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+/* Image fills the frame without gaps. */
+.wp-block-post-featured-image.flavor-thumbnail img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  border-radius: 8px !important;
+}
+
+/* On hover, the thumbnail rotates back to its normal position. */
+.flavor-post-card:hover .wp-block-post-featured-image.flavor-thumbnail a,
+.flavor-post-list-item:hover .wp-block-post-featured-image.flavor-thumbnail a {
+  transform: rotate(0deg);
+  box-shadow: 
+    2px 4px 8px rgba(0, 0, 0, 0.12),
+    1px 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* ========== POST CARD TYPOGRAPHY ========== */
+
+/* Post card title with increased size for better readability. */
+.flavor-post-card .wp-block-post-title,
+.flavor-post-list-item .wp-block-post-title {
+  font-size: calc(1.125rem + 0.3vw) !important;
+  line-height: 1.35;
+  font-weight: 600 !important;
+}
+
+.flavor-post-card .wp-block-post-title a,
+.flavor-post-list-item .wp-block-post-title a {
+  text-decoration: none;
+}
+
+.flavor-post-card .wp-block-post-title a:hover,
+.flavor-post-list-item .wp-block-post-title a:hover {
+  color: var(--wp--preset--color--accent);
+}
+
+/* Post card excerpt with comfortable line height. */
+.flavor-post-card .wp-block-post-excerpt,
+.flavor-post-list-item .wp-block-post-excerpt {
+  line-height: calc(1.5em + 0.2vw);
+}
+
+/* Read more link within post cards. */
+.flavor-post-card .wp-block-read-more,
+.flavor-post-list-item .wp-block-read-more {
+  color: var(--wp--preset--color--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.flavor-post-card .wp-block-read-more:hover,
+.flavor-post-list-item .wp-block-read-more:hover {
+  text-decoration: underline;
+}
+
+/* Hides the thumbnail container when no image is available. */
+.flavor-post-card .wp-block-post-featured-image:not(:has(img)),
+.flavor-post-list-item .wp-block-post-featured-image:not(:has(img)) {
+  display: none;
+}
+
+/* Dark mode thumbnail border color adjustment. */
+[data-theme="dark"] .wp-block-post-featured-image.flavor-thumbnail::before {
+  border-color: var(--wp--preset--color--accent);
+}
+
+/* ========== DARK MODE ========== */
+[data-theme="dark"] {
+  --wp--preset--color--base: #0f172a;
+  --wp--preset--color--surface: #1e293b;
+  --wp--preset--color--contrast: #f8fafc;
+  --wp--preset--color--primary: #94a3b8;
+  --wp--preset--color--secondary: #64748b;
+  --wp--preset--color--muted: #94a3b8;
+  --wp--preset--color--subtle: #334155;
+  --wp--preset--color--accent: #818cf8;
+}
+
+[data-theme="dark"] body {
+  background-color: var(--wp--preset--color--base);
+  color: var(--wp--preset--color--contrast);
+}
+
+[data-theme="dark"] .has-surface-background-color {
+  background-color: var(--wp--preset--color--surface) !important;
+}
+
+[data-theme="dark"] .has-subtle-background-color {
+  background-color: var(--wp--preset--color--subtle) !important;
+}
+
+/* System preference fallback for users who prefer dark mode. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --wp--preset--color--base: #0f172a;
+    --wp--preset--color--surface: #1e293b;
+    --wp--preset--color--contrast: #f8fafc;
+    --wp--preset--color--primary: #94a3b8;
+    --wp--preset--color--secondary: #64748b;
+    --wp--preset--color--muted: #94a3b8;
+    --wp--preset--color--subtle: #334155;
+  }
+}
+
+/* Smooth transitions for dark mode color changes. */
+body,
+.wp-block-group {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ========== SELECTION ========== */
+::selection {
+  background-color: var(--wp--preset--color--accent);
+  color: var(--wp--preset--color--contrast);
+}
+
+[data-theme="dark"] ::selection {
+  color: #0f172a;
+}
+
+/* ========== NEWSLETTER FORM ========== */
+.flavor-newsletter-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.flavor-newsletter-centered {
+  justify-content: center;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.flavor-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.875rem 1.25rem;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.flavor-input:focus {
+  outline: none;
+  border-color: var(--wp--preset--color--accent);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+}
+
+.flavor-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.flavor-submit {
+  padding: 0.875rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: inherit;
+  border: none;
+  border-radius: 8px;
+  background: var(--wp--preset--color--accent);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.flavor-submit:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
+  background: #4f46e5;
+}
+
+.flavor-submit:active {
+  transform: translateY(0);
+}
+
+/* Newsletter section maintains a dark background in both modes. */
+.flavor-newsletter-section {
+  background-color: #0F172A !important;
+  color: #F8FAFC !important;
+}
+
+/* Slightly lighter newsletter background in dark mode for distinction. */
+[data-theme="dark"] .flavor-newsletter-section {
+  background-color: #1E293B !important;
+}
+
+.flavor-newsletter-section .has-base-color {
+  color: #F8FAFC !important;
+}
+
+.flavor-newsletter-section .has-subtle-color,
+.flavor-newsletter-section .has-muted-color {
+  color: #9CA3AF !important;
+}
+
+/* Header navigation hover state with accent color. */
+header .wp-block-navigation a,
+.wp-block-template-part[data-area="header"] .wp-block-navigation a {
+  transition: color 0.2s ease;
+}
+
+header .wp-block-navigation a:hover,
+.wp-block-template-part[data-area="header"] .wp-block-navigation a:hover {
+  color: var(--wp--preset--color--accent) !important;
+}
+
+/* Footer navigation hover state. */
+footer .wp-block-navigation a,
+.wp-block-template-part[data-area="footer"] .wp-block-navigation a {
+  transition: color 0.2s ease;
+}
+
+footer .wp-block-navigation a:hover,
+.wp-block-template-part[data-area="footer"] .wp-block-navigation a:hover {
+  color: var(--wp--preset--color--contrast) !important;
+}
+
+[data-theme="dark"] footer .wp-block-navigation a:hover,
+[data-theme="dark"] .wp-block-template-part[data-area="footer"] .wp-block-navigation a:hover {
+  color: var(--wp--preset--color--accent) !important;
+}
+
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 782px) {
+  header .wp-block-social-links {
+    display: none !important;
+  }
+
+  .flavor-newsletter-form {
+    flex-direction: column;
+  }
+
+  .flavor-input,
+  .flavor-submit {
+    width: 100%;
+  }
+}

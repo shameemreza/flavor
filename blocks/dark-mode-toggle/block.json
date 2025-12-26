@@ -1,0 +1,65 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "flavor/dark-mode-toggle",
+	"version": "1.0.0",
+	"title": "Dark Mode Toggle",
+	"category": "flavor",
+	"icon": "lightbulb",
+	"description": "A toggle button to switch between light and dark color modes.",
+	"keywords": ["dark", "light", "mode", "toggle", "theme", "color", "switch"],
+	"textdomain": "flavor",
+	"attributes": {
+		"defaultMode": {
+			"type": "string",
+			"default": "system",
+			"enum": ["light", "dark", "system"]
+		},
+		"buttonStyle": {
+			"type": "string",
+			"default": "simple",
+			"enum": ["simple", "default", "minimal", "pill"]
+		},
+		"iconStyle": {
+			"type": "string",
+			"default": "outline",
+			"enum": ["outline", "filled", "duotone"]
+		},
+		"showLabel": {
+			"type": "boolean",
+			"default": false
+		},
+		"lightLabel": {
+			"type": "string",
+			"default": "Light"
+		},
+		"darkLabel": {
+			"type": "string",
+			"default": "Dark"
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": false,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		},
+		"color": {
+			"background": true,
+			"text": true
+		},
+		"__experimentalBorder": {
+			"radius": true,
+			"width": true,
+			"color": true,
+			"style": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"viewScript": "file:./view.js",
+	"style": "file:./style.css",
+	"editorStyle": "file:./style.css",
+	"render": "file:./render.php"
+}
+
