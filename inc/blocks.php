@@ -17,10 +17,19 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @return void
  */
 function flavor_register_blocks() {
-	$block_path = get_template_directory() . '/blocks/dark-mode-toggle';
-	if ( file_exists( $block_path . '/block.json' ) ) {
-		register_block_type_from_metadata( $block_path );
+	$blocks_dir = get_template_directory() . '/inc/blocks';
+
+	// Get all block directories.
+	$block_folders = array(
+		'dark-mode-toggle',
+		'newsletter',
+	);
+
+	foreach ( $block_folders as $block ) {
+		$block_path = $blocks_dir . '/' . $block;
+		if ( file_exists( $block_path . '/block.json' ) ) {
+			register_block_type_from_metadata( $block_path );
+		}
 	}
 }
 add_action( 'init', 'flavor_register_blocks' );
-

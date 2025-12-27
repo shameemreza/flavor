@@ -1,0 +1,87 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "flavor/newsletter",
+	"version": "1.0.3",
+	"title": "Newsletter Signup",
+	"category": "flavor",
+	"description": "A newsletter signup form for collecting email subscribers.",
+	"keywords": ["newsletter", "subscribe", "email", "form", "signup"],
+	"textdomain": "flavor",
+	"attributes": {
+		"heading": {
+			"type": "string",
+			"default": "Join the Newsletter"
+		},
+		"description": {
+			"type": "string",
+			"default": "Get weekly insights on personal branding, productivity, and building an audience."
+		},
+		"buttonText": {
+			"type": "string",
+			"default": "Subscribe"
+		},
+		"placeholder": {
+			"type": "string",
+			"default": "Enter your email"
+		},
+		"showNameField": {
+			"type": "boolean",
+			"default": false
+		},
+		"namePlaceholder": {
+			"type": "string",
+			"default": "Your First Name"
+		},
+		"privacyText": {
+			"type": "string",
+			"default": "No spam. Unsubscribe anytime."
+		},
+		"formAction": {
+			"type": "string",
+			"default": ""
+		},
+		"formLayout": {
+			"type": "string",
+			"default": "inline",
+			"enum": ["inline", "stacked"]
+		},
+		"backgroundStyle": {
+			"type": "string",
+			"default": "dark",
+			"enum": ["dark", "light", "card"]
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": ["wide", "full"],
+		"spacing": {
+			"padding": true,
+			"margin": true
+		},
+		"color": {
+			"background": true,
+			"text": true,
+			"button": true,
+			"gradients": true
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true,
+			"__experimentalFontFamily": true,
+			"__experimentalFontWeight": true,
+			"__experimentalFontStyle": true,
+			"__experimentalTextTransform": true,
+			"__experimentalLetterSpacing": true
+		},
+		"__experimentalBorder": {
+			"radius": true,
+			"width": true,
+			"color": true,
+			"style": true
+		}
+	},
+	"editorScript": "file:./index.js",
+	"style": "file:./style.css",
+	"render": "file:./render.php"
+}

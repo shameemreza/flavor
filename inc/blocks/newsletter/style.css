@@ -1,0 +1,225 @@
+/**
+ * Newsletter Block Styles
+ *
+ * @package flavor
+ * @since 1.0.0
+ */
+
+.flavor-newsletter {
+	padding: var(--wp--preset--spacing--50);
+	border-radius: 12px;
+}
+
+.flavor-newsletter__inner {
+	max-width: 580px;
+	margin-inline: auto;
+	text-align: center;
+}
+
+.flavor-newsletter__heading {
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin: 0 0 0.5rem;
+	line-height: 1.3;
+}
+
+.flavor-newsletter__description {
+	font-size: 1rem;
+	line-height: 1.6;
+	margin: 0 0 1.5rem;
+	opacity: 0.9;
+}
+
+.flavor-newsletter__form {
+	display: flex;
+	gap: 0.75rem;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.flavor-newsletter__input {
+	flex: 1;
+	min-width: 200px;
+	max-width: 280px;
+	padding: 0.875rem 1.25rem;
+	font-size: 1rem;
+	border: 1px solid transparent;
+	border-radius: 8px;
+	outline: none;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.flavor-newsletter__input:focus {
+	border-color: var(--wp--preset--color--primary);
+	box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.flavor-newsletter__input--name {
+	max-width: 180px;
+}
+
+.flavor-newsletter__button {
+	padding: 0.875rem 2rem;
+	font-size: 1rem;
+	font-weight: 600;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: transform 0.15s ease, box-shadow 0.15s ease;
+	white-space: nowrap;
+}
+
+.flavor-newsletter__button:hover {
+	transform: translateY(-1px);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.flavor-newsletter__button:active {
+	transform: translateY(0);
+}
+
+.flavor-newsletter__privacy {
+	font-size: 0.8125rem;
+	margin: 1rem 0 0;
+	opacity: 0.7;
+}
+
+.flavor-newsletter__privacy a {
+	text-decoration: underline;
+	opacity: 0.9;
+}
+
+.flavor-newsletter__privacy a:hover {
+	opacity: 1;
+}
+
+/* Dark Style Preset (Default) */
+.flavor-newsletter--dark {
+	background-color: var(--wp--preset--color--contrast);
+	color: var(--wp--preset--color--base);
+}
+
+.flavor-newsletter--dark .flavor-newsletter__input {
+	background-color: rgba(255, 255, 255, 0.1);
+	color: var(--wp--preset--color--base);
+	border-color: rgba(255, 255, 255, 0.2);
+}
+
+.flavor-newsletter--dark .flavor-newsletter__input::placeholder {
+	color: rgba(255, 255, 255, 0.6);
+}
+
+.flavor-newsletter--dark .flavor-newsletter__button {
+	background-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--base);
+}
+
+/* Light Style Preset */
+.flavor-newsletter--light {
+	background-color: var(--wp--preset--color--surface);
+	color: var(--wp--preset--color--contrast);
+}
+
+.flavor-newsletter--light .flavor-newsletter__input {
+	background-color: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--contrast);
+	border-color: var(--wp--preset--color--subtle);
+}
+
+.flavor-newsletter--light .flavor-newsletter__input::placeholder {
+	color: var(--wp--preset--color--muted);
+}
+
+.flavor-newsletter--light .flavor-newsletter__button {
+	background-color: var(--wp--preset--color--contrast);
+	color: var(--wp--preset--color--base);
+}
+
+/* Card Style Preset */
+.flavor-newsletter--card {
+	background-color: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--contrast);
+	border: 1px solid var(--wp--preset--color--subtle);
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.flavor-newsletter--card .flavor-newsletter__input {
+	background-color: var(--wp--preset--color--surface);
+	color: var(--wp--preset--color--contrast);
+	border-color: var(--wp--preset--color--subtle);
+}
+
+.flavor-newsletter--card .flavor-newsletter__input::placeholder {
+	color: var(--wp--preset--color--muted);
+}
+
+.flavor-newsletter--card .flavor-newsletter__button {
+	background-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--base);
+}
+
+/* WordPress Color Supports - Override presets when custom colors are set */
+.flavor-newsletter.has-background {
+	background-color: var(--wp--custom--background-color, var(--wp--preset--color--contrast));
+}
+
+.flavor-newsletter.has-text-color {
+	color: var(--wp--custom--text-color, var(--wp--preset--color--base));
+}
+
+/* Button colors from WordPress supports */
+.flavor-newsletter.has-button-color .flavor-newsletter__button {
+	background-color: var(--wp--custom--button--background-color);
+}
+
+.flavor-newsletter.has-button-text-color .flavor-newsletter__button {
+	color: var(--wp--custom--button--text-color);
+}
+
+/* Stacked Layout */
+.flavor-newsletter--stacked .flavor-newsletter__form {
+	flex-direction: column;
+	align-items: center;
+}
+
+.flavor-newsletter--stacked .flavor-newsletter__input {
+	width: 100%;
+	max-width: 360px;
+}
+
+.flavor-newsletter--stacked .flavor-newsletter__input--name {
+	max-width: 360px;
+}
+
+.flavor-newsletter--stacked .flavor-newsletter__button {
+	width: 100%;
+	max-width: 360px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+	.flavor-newsletter {
+		padding: var(--wp--preset--spacing--40);
+	}
+
+	.flavor-newsletter__form {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.flavor-newsletter__input,
+	.flavor-newsletter__input--name {
+		max-width: none;
+		min-width: auto;
+	}
+
+	.flavor-newsletter__button {
+		width: 100%;
+	}
+}
+
+/* Editor styles */
+.block-editor-block-list__block .flavor-newsletter__input,
+.block-editor-block-list__block .flavor-newsletter__button {
+	pointer-events: none;
+}

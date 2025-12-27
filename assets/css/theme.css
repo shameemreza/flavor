@@ -48,13 +48,169 @@
   transform: translateY(-1px);
 }
 
-/* Featured image hover (excludes thumbnail style) */
-.wp-block-post-featured-image:not(.flavor-thumbnail) img {
+/* Featured image hover */
+.wp-block-post-featured-image img {
   transition: transform 0.3s ease;
 }
 
-.wp-block-post-featured-image:not(.flavor-thumbnail) a:hover img {
+.wp-block-post-featured-image a:hover img {
   transform: scale(1.02);
+}
+
+/* ========== POST LIST ITEMS ========== */
+
+.flavor-post-item {
+  transition: background-color 0.2s ease;
+}
+
+.flavor-post-item:hover {
+  background-color: var(--wp--preset--color--surface);
+  margin-inline: -1rem;
+  padding-inline: 1rem !important;
+  border-radius: 12px;
+}
+
+.flavor-post-item:last-child {
+  border-bottom: none !important;
+}
+
+/* Thumbnail container - fixed size */
+.flavor-post-item .wp-block-post-featured-image,
+.flavor-post-thumbnail {
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: var(--wp--preset--color--surface);
+}
+
+/* Placeholder for posts without featured image */
+.flavor-post-item .wp-block-post-featured-image:empty,
+.flavor-post-thumbnail:empty {
+  display: block !important;
+  width: 220px;
+  height: 160px;
+  background: linear-gradient(135deg, var(--wp--preset--color--surface) 0%, var(--wp--preset--color--subtle) 100%);
+  position: relative;
+}
+
+.flavor-post-item .wp-block-post-featured-image:empty::after,
+.flavor-post-thumbnail:empty::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8' stroke-width='1.5'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z' /%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.4;
+}
+
+/* Post title link styling */
+.wp-block-post-title a {
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.wp-block-post-title a:hover {
+  color: var(--wp--preset--color--accent);
+}
+
+/* Category tags link styling. */
+.wp-block-post-terms a {
+  text-decoration: none;
+  color: var(--wp--preset--color--accent);
+  transition: opacity 0.2s ease;
+}
+
+.wp-block-post-terms a:hover {
+  opacity: 0.7;
+}
+
+/* Read more link styling */
+.wp-block-read-more {
+  text-decoration: none;
+  color: var(--wp--preset--color--accent);
+  transition: opacity 0.2s ease;
+}
+
+.wp-block-read-more:hover {
+  text-decoration: underline;
+}
+
+/* Excerpt styling */
+.wp-block-post-excerpt__more-link {
+  display: none;
+}
+
+/* ========== STICKY POST INDICATOR ========== */
+.post.sticky .flavor-post-item::before,
+.wp-block-post.is-sticky .flavor-post-item::before {
+  content: "★";
+  position: absolute;
+  top: var(--wp--preset--spacing--40);
+  right: 0;
+  font-size: 0.75rem;
+  color: var(--wp--preset--color--accent);
+  background: var(--wp--preset--color--surface);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* ========== PAGINATION ========== */
+.wp-block-query-pagination {
+  gap: 0.5rem;
+}
+
+.wp-block-query-pagination-numbers {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.wp-block-query-pagination-numbers .page-numbers {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  padding: 0 0.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--wp--preset--color--secondary);
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.wp-block-query-pagination-numbers .page-numbers:hover {
+  background: var(--wp--preset--color--surface);
+  color: var(--wp--preset--color--contrast);
+}
+
+.wp-block-query-pagination-numbers .page-numbers.current {
+  background: var(--wp--preset--color--contrast);
+  color: var(--wp--preset--color--base);
+  font-weight: 600;
+}
+
+.wp-block-query-pagination-previous,
+.wp-block-query-pagination-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--wp--preset--color--secondary);
+  background: var(--wp--preset--color--surface);
+  transition: all 0.2s ease;
+}
+
+.wp-block-query-pagination-previous:hover,
+.wp-block-query-pagination-next:hover {
+  background: var(--wp--preset--color--contrast);
+  color: var(--wp--preset--color--base);
 }
 
 /* ========== POST CARDS ========== */
@@ -68,7 +224,7 @@
 
 .flavor-post-card,
 .flavor-popular-card {
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .flavor-post-card:hover {
@@ -87,37 +243,6 @@
 
 [data-theme="dark"] .flavor-popular-card:hover {
   box-shadow: 0 4px 20px rgba(129, 140, 248, 0.15);
-}
-
-.wp-block-post-title a {
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.wp-block-post-title a:hover {
-  color: var(--wp--preset--color--accent);
-}
-
-/* Category tags link styling. */
-.wp-block-post-terms a {
-  text-decoration: none;
-  color: var(--wp--preset--color--accent);
-  transition: opacity 0.2s ease;
-}
-
-.wp-block-post-terms a:hover {
-  opacity: 0.8;
-}
-
-/* Read more link styling with accent color. */
-.wp-block-read-more {
-  text-decoration: none;
-  color: var(--wp--preset--color--accent);
-  transition: color 0.2s ease;
-}
-
-.wp-block-read-more:hover {
-  opacity: 0.8;
 }
 
 /* ========== SMASHING MAGAZINE STYLE THUMBNAIL ========== */
@@ -170,56 +295,6 @@
     1px 2px 4px rgba(0, 0, 0, 0.08);
 }
 
-/* ========== POST CARD TYPOGRAPHY ========== */
-
-/* Post card title with increased size for better readability. */
-.flavor-post-card .wp-block-post-title,
-.flavor-post-list-item .wp-block-post-title {
-  font-size: calc(1.125rem + 0.3vw) !important;
-  line-height: 1.35;
-  font-weight: 600 !important;
-}
-
-.flavor-post-card .wp-block-post-title a,
-.flavor-post-list-item .wp-block-post-title a {
-  text-decoration: none;
-}
-
-.flavor-post-card .wp-block-post-title a:hover,
-.flavor-post-list-item .wp-block-post-title a:hover {
-  color: var(--wp--preset--color--accent);
-}
-
-/* Post card excerpt with comfortable line height. */
-.flavor-post-card .wp-block-post-excerpt,
-.flavor-post-list-item .wp-block-post-excerpt {
-  line-height: calc(1.5em + 0.2vw);
-}
-
-/* Read more link within post cards. */
-.flavor-post-card .wp-block-read-more,
-.flavor-post-list-item .wp-block-read-more {
-  color: var(--wp--preset--color--accent);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.flavor-post-card .wp-block-read-more:hover,
-.flavor-post-list-item .wp-block-read-more:hover {
-  text-decoration: underline;
-}
-
-/* Hides the thumbnail container when no image is available. */
-.flavor-post-card .wp-block-post-featured-image:not(:has(img)),
-.flavor-post-list-item .wp-block-post-featured-image:not(:has(img)) {
-  display: none;
-}
-
-/* Dark mode thumbnail border color adjustment. */
-[data-theme="dark"] .wp-block-post-featured-image.flavor-thumbnail::before {
-  border-color: var(--wp--preset--color--accent);
-}
-
 /* ========== DARK MODE ========== */
 [data-theme="dark"] {
   --wp--preset--color--base: #0f172a;
@@ -243,6 +318,12 @@
 
 [data-theme="dark"] .has-subtle-background-color {
   background-color: var(--wp--preset--color--subtle) !important;
+}
+
+/* Dark mode pagination */
+[data-theme="dark"] .wp-block-query-pagination-numbers .page-numbers.current {
+  background: var(--wp--preset--color--contrast);
+  color: var(--wp--preset--color--base);
 }
 
 /* System preference fallback for users who prefer dark mode. */
@@ -384,6 +465,41 @@ footer .wp-block-navigation a:hover,
   color: var(--wp--preset--color--accent) !important;
 }
 
+/* ========== CATEGORIES LIST ========== */
+
+/* Categories list displayed horizontally. */
+.wp-block-categories {
+  list-style: none !important;
+  padding-left: 0 !important;
+}
+
+.wp-block-categories li {
+  display: inline-block;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.wp-block-categories li a {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  background: var(--wp--preset--color--surface);
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--wp--preset--color--secondary);
+  transition: all 0.2s ease;
+}
+
+.wp-block-categories li a:hover {
+  background: var(--wp--preset--color--accent);
+  color: #fff;
+}
+
+/* Post count styling within category links. */
+.wp-block-categories li .wp-block-categories__post-count {
+  color: var(--wp--preset--color--muted);
+  font-size: 0.85em;
+  margin-left: 0.25rem;
+}
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 782px) {
@@ -398,5 +514,27 @@ footer .wp-block-navigation a:hover,
   .flavor-input,
   .flavor-submit {
     width: 100%;
+  }
+  
+  /* Stack post items on mobile */
+  .flavor-post-item {
+    flex-direction: column !important;
+    gap: var(--wp--preset--spacing--30) !important;
+  }
+  
+  .flavor-post-item .wp-block-post-featured-image,
+  .flavor-post-item .wp-block-post-featured-image:empty {
+    width: 100% !important;
+    height: 200px !important;
+  }
+  
+  /* Pagination on mobile */
+  .wp-block-query-pagination {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .wp-block-query-pagination-numbers {
+    order: -1;
   }
 }

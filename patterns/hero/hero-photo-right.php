@@ -47,8 +47,8 @@
 
 		<!-- wp:column {"verticalAlignment":"center","width":"260px"} -->
 		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:260px">
-			<!-- wp:image {"width":"260px","height":"260px","scale":"cover","sizeSlug":"medium","linkDestination":"none","align":"center","className":"is-style-rounded","style":{"border":{"radius":"16px"}}} -->
-			<figure class="wp-block-image aligncenter size-medium is-style-rounded has-custom-border"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/placeholder-avatar.svg" alt="<?php esc_attr_e( 'Profile photo', 'flavor' ); ?>" style="border-radius:16px;object-fit:cover;width:260px;height:260px"/></figure>
+			<!-- wp:image {"sizeSlug":"medium","linkDestination":"none","align":"center","className":"is-style-rounded","style":{"border":{"radius":"16px"}}} -->
+			<figure class="wp-block-image aligncenter size-medium is-style-rounded has-custom-border" style="border-radius:16px"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/placeholder-avatar.svg" alt="<?php esc_attr_e( 'Profile photo', 'flavor' ); ?>"/></figure>
 			<!-- /wp:image -->
 		</div>
 		<!-- /wp:column -->
