@@ -11,7 +11,7 @@ A minimal, lightning-fast WordPress block theme designed for personal brand webs
 
 == Description ==
 
-Flavor is a minimal, lightning-fast WordPress block theme designed for personal brand websites and blogs. It prioritizes readability, performance, and accessibility while providing a beautiful, modern aesthetic that helps individuals establish their online presence without complexity.
+Flavor is a minimal, lightning-fast WordPress block theme designed for personal brand websites and blogs. It prioritizes readability, and performance while providing a beautiful, modern aesthetic that helps individuals establish their online presence without complexity.
 
 Built with performance in mind, Flavor aims for a perfect 100/100 Lighthouse score by using local fonts, fluid typography, and minimal CSS.
 
@@ -94,6 +94,7 @@ All icons are inline SVGs, self-created and released under GPL.
 == Copyright ==
 
 Flavor WordPress Theme, (C) 2025 Shameem Reza
+
 Flavor is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
