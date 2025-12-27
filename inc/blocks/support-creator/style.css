@@ -1,0 +1,246 @@
+/**
+ * Support Creator Block Styles
+ *
+ * @package flavor
+ * @since 1.0.0
+ */
+
+.flavor-support {
+	text-align: center;
+}
+
+.flavor-support__header {
+	margin-bottom: 1.5rem;
+}
+
+.flavor-support__heading {
+	font-size: 1.25rem;
+	font-weight: 600;
+	margin: 0 0 0.5rem;
+	line-height: 1.3;
+}
+
+.flavor-support__description {
+	font-size: 0.9375rem;
+	color: var(--wp--preset--color--secondary);
+	margin: 0;
+	line-height: 1.5;
+}
+
+.flavor-support__buttons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	justify-content: center;
+}
+
+.flavor-support__button {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.75rem 1.25rem;
+	font-size: 0.9375rem;
+	font-weight: 500;
+	text-decoration: none;
+	border-radius: 8px;
+	transition: all 0.2s ease;
+	/* Default colors - uses theme accent */
+	background: var(--wp--preset--color--accent);
+	color: #fff;
+}
+
+.flavor-support__button:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	opacity: 0.9;
+}
+
+.flavor-support__icon {
+	width: 20px;
+	height: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
+
+.flavor-support__icon svg {
+	width: 100%;
+	height: 100%;
+}
+
+/* ========================================
+   Service Brand Colors (when enabled)
+   ======================================== */
+
+.flavor-support--service-colors .flavor-support__button--kofi {
+	background: #ff5e5b;
+	color: #fff;
+}
+
+.flavor-support--service-colors .flavor-support__button--kofi:hover {
+	background: #ff4744;
+}
+
+.flavor-support--service-colors .flavor-support__button--patreon {
+	background: #ff424d;
+	color: #fff;
+}
+
+.flavor-support--service-colors .flavor-support__button--patreon:hover {
+	background: #e6353f;
+}
+
+.flavor-support--service-colors .flavor-support__button--buymeacoffee {
+	background: #ffdd00;
+	color: #000;
+}
+
+.flavor-support--service-colors .flavor-support__button--buymeacoffee:hover {
+	background: #e6c700;
+}
+
+.flavor-support--service-colors .flavor-support__button--paypal {
+	background: #003087;
+	color: #fff;
+}
+
+.flavor-support--service-colors .flavor-support__button--paypal:hover {
+	background: #002570;
+}
+
+.flavor-support--service-colors .flavor-support__button--github {
+	background: #24292e;
+	color: #fff;
+}
+
+.flavor-support--service-colors .flavor-support__button--github:hover {
+	background: #1a1e22;
+}
+
+.flavor-support--service-colors .flavor-support__button--custom {
+	background: var(--wp--preset--color--accent);
+	color: #fff;
+}
+
+/* ========================================
+   Vertical Layout
+   ======================================== */
+
+.flavor-support--vertical .flavor-support__buttons {
+	flex-direction: column;
+	align-items: center;
+}
+
+.flavor-support--vertical .flavor-support__button {
+	width: 100%;
+	max-width: 280px;
+	justify-content: center;
+}
+
+/* ========================================
+   Card Style
+   ======================================== */
+
+.flavor-support--card {
+	background: var(--wp--preset--color--surface);
+	padding: 2rem;
+	border-radius: 12px;
+}
+
+/* ========================================
+   Minimal Style (Outline Buttons)
+   ======================================== */
+
+.flavor-support--minimal .flavor-support__button {
+	background: transparent;
+	color: var(--wp--preset--color--contrast);
+	border: 1px solid var(--wp--preset--color--subtle);
+}
+
+.flavor-support--minimal .flavor-support__button:hover {
+	border-color: var(--wp--preset--color--accent);
+	color: var(--wp--preset--color--accent);
+	background: transparent;
+	box-shadow: none;
+}
+
+/* Minimal style with service colors - use brand colors on hover */
+.flavor-support--minimal.flavor-support--service-colors .flavor-support__button--kofi:hover {
+	border-color: #ff5e5b;
+	color: #ff5e5b;
+}
+
+.flavor-support--minimal.flavor-support--service-colors .flavor-support__button--patreon:hover {
+	border-color: #ff424d;
+	color: #ff424d;
+}
+
+.flavor-support--minimal.flavor-support--service-colors .flavor-support__button--buymeacoffee:hover {
+	border-color: #ffdd00;
+	color: #b39700;
+}
+
+.flavor-support--minimal.flavor-support--service-colors .flavor-support__button--paypal:hover {
+	border-color: #003087;
+	color: #003087;
+}
+
+.flavor-support--minimal.flavor-support--service-colors .flavor-support__button--github:hover {
+	border-color: #24292e;
+	color: #24292e;
+}
+
+/* ========================================
+   Placeholder in Editor
+   ======================================== */
+
+.flavor-support__placeholder {
+	color: var(--wp--preset--color--muted);
+	font-style: italic;
+	padding: 1rem;
+	background: var(--wp--preset--color--surface);
+	border-radius: 8px;
+	margin: 0;
+}
+
+/* ========================================
+   Dark Mode Adjustments
+   ======================================== */
+
+[data-theme="dark"] .flavor-support--card {
+	background: var(--wp--preset--color--surface);
+}
+
+[data-theme="dark"] .flavor-support--minimal .flavor-support__button {
+	border-color: var(--wp--preset--color--subtle);
+	color: var(--wp--preset--color--contrast);
+}
+
+[data-theme="dark"] .flavor-support--minimal.flavor-support--service-colors .flavor-support__button--buymeacoffee:hover {
+	color: #ffdd00;
+}
+
+[data-theme="dark"] .flavor-support--minimal.flavor-support--service-colors .flavor-support__button--paypal:hover {
+	color: #00a1e4;
+}
+
+[data-theme="dark"] .flavor-support--minimal.flavor-support--service-colors .flavor-support__button--github:hover {
+	color: #fff;
+	border-color: #fff;
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+
+@media (max-width: 600px) {
+	.flavor-support__buttons {
+		flex-direction: column;
+	}
+
+	.flavor-support__button {
+		width: 100%;
+		justify-content: center;
+	}
+}

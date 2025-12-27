@@ -1,0 +1,112 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "flavor/support-creator",
+	"version": "1.0.0",
+	"title": "Support Creator",
+	"category": "flavor",
+	"description": "Add support links for Ko-fi, Patreon, Buy Me a Coffee, PayPal, and more.",
+	"keywords": ["support", "tip", "donate", "kofi", "patreon", "coffee", "paypal", "creator"],
+	"textdomain": "flavor",
+	"attributes": {
+		"heading": {
+			"type": "string",
+			"default": "Support My Work"
+		},
+		"description": {
+			"type": "string",
+			"default": "If you found this helpful, consider supporting me!"
+		},
+		"showHeading": {
+			"type": "boolean",
+			"default": true
+		},
+		"kofiUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"patreonUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"buymeacoffeeUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"paypalUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"githubUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"customUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"customLabel": {
+			"type": "string",
+			"default": "Support"
+		},
+		"layout": {
+			"type": "string",
+			"default": "horizontal",
+			"enum": ["horizontal", "vertical"]
+		},
+		"style": {
+			"type": "string",
+			"default": "default",
+			"enum": ["default", "card", "minimal"]
+		},
+		"useServiceColors": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"supports": {
+		"html": false,
+		"align": ["wide", "full"],
+		"anchor": true,
+		"spacing": {
+			"padding": true,
+			"margin": true,
+			"blockGap": true
+		},
+		"color": {
+			"background": true,
+			"text": true,
+			"gradients": true,
+			"link": true,
+			"__experimentalDefaultControls": {
+				"background": true,
+				"text": true
+			}
+		},
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true,
+			"fontFamily": true,
+			"fontWeight": true,
+			"fontStyle": true,
+			"textTransform": true,
+			"letterSpacing": true,
+			"__experimentalDefaultControls": {
+				"fontSize": true,
+				"fontWeight": true
+			}
+		},
+		"__experimentalBorder": {
+			"radius": true,
+			"width": true,
+			"color": true,
+			"style": true,
+			"__experimentalDefaultControls": {
+				"radius": true
+			}
+		}
+	},
+	"editorScript": "file:./index.js",
+	"style": "file:./style.css",
+	"render": "file:./render.php"
+}

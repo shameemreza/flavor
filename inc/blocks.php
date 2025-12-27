@@ -23,6 +23,7 @@ function flavor_register_blocks() {
 	$block_folders = array(
 		'dark-mode-toggle',
 		'newsletter',
+		'support-creator',
 	);
 
 	foreach ( $block_folders as $block ) {

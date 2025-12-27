@@ -32,6 +32,22 @@ function flavor_register_pattern_categories() {
 			'description' => __( 'Hero section patterns.', 'flavor' ),
 		)
 	);
+
+	register_block_pattern_category(
+		'flavor_gallery',
+		array(
+			'label'       => __( 'Galleries', 'flavor' ),
+			'description' => __( 'Image gallery patterns for photo posts.', 'flavor' ),
+		)
+	);
+
+	register_block_pattern_category(
+		'flavor_video',
+		array(
+			'label'       => __( 'Videos', 'flavor' ),
+			'description' => __( 'Video embed patterns for YouTube, Vimeo, etc.', 'flavor' ),
+		)
+	);
 }
 add_action( 'init', 'flavor_register_pattern_categories' );
 

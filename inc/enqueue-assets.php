@@ -32,6 +32,17 @@ function flavor_scripts() {
 		array( 'flavor-style' ),
 		wp_get_theme()->get( 'Version' )
 	);
+
+	// Social share script on single posts.
+	if ( is_singular( 'post' ) ) {
+		wp_enqueue_script(
+			'flavor-social-share',
+			get_parent_theme_file_uri( 'assets/js/social-share.js' ),
+			array(),
+			wp_get_theme()->get( 'Version' ),
+			true
+		);
+	}
 }
 add_action( 'wp_enqueue_scripts', 'flavor_scripts' );
 
