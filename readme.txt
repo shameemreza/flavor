@@ -1,7 +1,7 @@
 === Flavor ===
 Contributors: shameemreza
 Requires at least: 6.4
-Tested up to: 6.7
+Tested up to: 6.9
 Requires PHP: 7.4
 Stable tag: 1.0.0
 License: GPLv2 or later
@@ -31,13 +31,25 @@ Built with performance in mind, Flavor aims for a perfect 100/100 Lighthouse sco
 
 Flavor includes several block patterns to help you get started:
 
+**Hero Sections:**
 * Hero - Photo Left - Split layout with photo on left.
 * Hero - Photo Right - Split layout with photo on right.
 * Hero - Photo Centered - Centered layout with photo above content.
 * Hero - Centered - Text-only centered hero.
 * Hero - With Newsletter - Hero with integrated newsletter signup.
-* Newsletter - A simple newsletter signup section.
+
+**Posts:**
 * Posts Grid - A grid layout for displaying blog posts.
+* Posts List - Simple list layout for blog posts.
+* Posts Cards - Card-style layout for blog posts.
+* Posts Featured - Highlight a featured post.
+* Blog Archive - Full archive page layout.
+
+**Gallery & Video:**
+* Gallery Grid - Photo gallery in grid layout.
+* Gallery Mosaic - Photo gallery in mosaic layout.
+* Video Featured - Featured video embed.
+* Video Grid - Multiple video embeds in grid.
 
 = Style Variations =
 

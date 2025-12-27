@@ -642,6 +642,11 @@
       "name": "page-no-title",
       "title": "Page (No Title)",
       "postTypes": ["page"]
+    },
+    {
+      "name": "page-with-featured",
+      "title": "Page with Featured Image",
+      "postTypes": ["page"]
     }
   ]
 }
